@@ -1,8 +1,12 @@
+import Sandip from "./sandip"
 
 function App() {
 
   return (
-      <h1>Hello World Its me sandip</h1>
+      <>
+      <Sandip/>
+      <h3>This is me Sandip Ghimire</h3>
+      </>
   )
 }
 
