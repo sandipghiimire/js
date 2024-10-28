@@ -1,12 +1,12 @@
+import { useState } from "react"
 import Sandip from "./sandip"
 
 function App() {
-
+  const [color, setColor] = useState("olive")
   return (
-      <>
-      <Sandip/>
-      <h3>This is me Sandip Ghimire</h3>
-      </>
+      <div className="w-full h-screen duration-200"
+      style={{backgroundColor: color}}
+      ></div>
   )
 }
 
