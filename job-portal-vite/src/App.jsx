@@ -6,7 +6,9 @@ function App() {
   return (
       <div className="w-full h-screen duration-200"
       style={{backgroundColor: color}}
-      ></div>
+      >
+        <div className="fixed flex flex-wrap justify-center"></div>
+      </div>
   )
 }
 
