@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.navbar {
+    background-color: #4CAF50; /* Navbar background color */
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Use imported font */
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex; /* Display links horizontally */
+    gap: 15px; /* Space between links */
+}
+
+.navbar-links a,
+.mobile-menu-items a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a:hover,
+.mobile-menu-items a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+}
+
+.mobile-menu-items {
+    display: flex;
+    flex-direction: column;
+    background-color: #333; /* Background for mobile menu */
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+}
+
+/* Search input styles */
+.search-input {
+    padding: 8px;
+    margin-right: 10px; /* Space between input and buttons */
+    border: none;
+    border-radius: 4px;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    display: none; /* Hide mobile menu button in desktop view */
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.btn-login, .btn-signup {
+    background-color: #f0ad4e; /* Button background color */
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px; /* Add space between buttons */
+}
+
+.btn-login:hover, .btn-signup:hover {
+    background-color: #ec971f; /* Darker shade on hover */
+}
+
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top */
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0; /* Space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-close {
+    background-color: #f44336; /* Close button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make it full width */
+}
+
+.btn-close:hover {
+    background-color: #d32f2f; /* Darker on hover */
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 988px) {
+    .navbar-links {
+        display: none; /* Hide links in mobile view */
+    }
+    .mobile-menu {
+        display: block; /* Show mobile menu button */
+    }
+    .navbar-actions {
+        display: none; /* Hide actions in mobile view */
+    }
+    .mobile-menu-items {
+        display: flex; /* Show mobile menu items when open */
+    }
+}
+
+@media (min-width: 989px) {
+    .mobile-menu-items {
+        display: none; /* Hide mobile menu items in desktop view */
+    }
+}
