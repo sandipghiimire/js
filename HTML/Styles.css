@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #38a169; /* Tailwind's green-600 */
+    color: white;
+    padding: 16px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 40px; /* Increased gap for more distance */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative; /* For tooltip positioning */
+}
+
+.navbar-links a i {
+    font-size: 20px; /* Increased icon size */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.navbar-links a:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%; /* Position above the icon */
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+    border-radius: 4px;
+}
+
+.btn-login, .btn-signup {
+    background-color: #fbbf24; /* Tailwind's yellow-400 */
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu {
+    display: none; /* Hide mobile menu button by default */
+}
+
+.mobile-menu-items {
+    display: none; /* Hide mobile menu items by default */
+    flex-direction: column; /* Stack vertically */
+    background-color: #38a169; /* Match navbar background */
+    padding: 16px; /* Add some padding */
+}
+
+.mobile-menu-items.open {
+    display: flex; /* Show mobile menu when open */
+}
+
+.mobile-menu-items a {
+    color: white;
+    padding: 8px 0; /* Space between items */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-items a:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 988px) {
+    .navbar-links {
+        display: none; /* Hide links on mobile */
+    }
+
+    .navbar-actions {
+        display: none; /* Hide actions on mobile */
+    }
+
+    .mobile-menu {
+        display: block; /* Show mobile menu button */
+    }
+}

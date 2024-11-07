@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Responsive Navbar</title>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">Local Job</div>
+        <div class="navbar-links">
+            <a href="#home" title="Home"><i class="fa fa-home"></i></a>
+            <a href="#about" title="About"><i class="fa fa-info-circle"></i></a>
+            <a href="#contact" title="Contact"><i class="fa fa-envelope"></i></a>
+            <a href="#jobs" title="Jobs"><i class="fa fa-briefcase"></i></a>
+        </div>
+        <div class="navbar-actions">
+            <input type="text" placeholder="Search" class="search-input">
+            <button class="btn-login" title="Login"><i class="fa fa-sign-in"></i> Login</button>
+            <button class="btn-signup" title="Sign Up"><i class="fa fa-user-plus"></i> Sign Up</button>
+        </div>
+        <div class="mobile-menu">
+            <button class="menu-button" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="mobile-menu-items" id="mobileMenu">
+        <a href="#home" title="Home"><i class="fa fa-home"></i> Home</a>
+        <a href="#about" title="About"><i class="fa fa-info-circle"></i> About</a>
+        <a href="#contact" title="Contact"><i class="fa fa-envelope"></i> Contact</a>
+        <a href="#jobs" title="Jobs"><i class="fa fa-briefcase"></i> Jobs</a>
+        <input type="text" placeholder="Search" class="search-input">
+        <button class="btn-login" title="Login"><i class="fa fa-sign-in"></i> Login</button>
+        <button class="btn-signup" title="Sign Up"><i class="fa fa-user-plus"></i> Sign Up</button>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('open');
+    }
+
+    window.addEventListener('resize', function() {
+        const menu = document.getElementById('mobileMenu');
+        if (window.innerWidth > 768) {
+            menu.classList.remove('open');
+        }
+    });
+</script>
+
+</body>
+</html>
